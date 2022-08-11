@@ -1,9 +1,7 @@
-
-
 module webappdeployment 'modules/webapp.bicep' = {
   name: 'webappdeployment'
   params: {
-    webappName:'iaminazurebicepwebapp'
+    webappName:'cicdazurebicepwebapp'
     location: 'eastus'
   }
 }
