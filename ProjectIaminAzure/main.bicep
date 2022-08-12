@@ -5,3 +5,11 @@ module webappdeployment 'modules/webapp.bicep' = {
     location: 'eastus'
   }
 }
+
+
+module storagedeployment 'modules/storage.bicep' = {
+  name: 'storagedeployment'
+  params:{
+    storageaccoutname: 'iaminazure'
+  }
+}
