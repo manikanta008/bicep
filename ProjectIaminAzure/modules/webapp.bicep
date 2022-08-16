@@ -3,6 +3,9 @@
 @description('App service name')
 
 
+param azureaspName string
+
+
 param webAppName string
 
 
@@ -10,7 +13,7 @@ param location string = resourceGroup().location
 
 
 resource azureasp 'Microsoft.Web/serverfarms@2020-06-01' = {
-  name: 'iaminazure'
+  name: azureaspName
   location: location
   sku: {
     tier: 'Free'
