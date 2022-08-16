@@ -1,7 +1,14 @@
+module azureaspdeployment 'modules/webapp.bicep' = {
+  name: 'azureaspdeployment'
+  params: {
+    aspName: 'iaminazure'
+  }
+}
+
 module webappdeployment 'modules/webapp.bicep' = {
   name: 'webappdeployment'
   params: {
-    webappName:'cicdazurebicepwebapp'
+    webappName:'iaminazurebicepwebapp'
     location: 'eastus'
   }
 }
