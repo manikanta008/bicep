@@ -3,7 +3,7 @@
 param storageaccountName string = 'mystorage'
 
 param webAppName string = 'iaminazurebicepwebapp'
-param location string = resourceGroup().location
+param location string = 'eastus'
 param appServicePlanName string = 'azureasp1'
 
 module webappdeployment 'modules/webapp.bicep' = {
