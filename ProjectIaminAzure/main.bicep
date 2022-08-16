@@ -1,6 +1,7 @@
 module webappdeployment 'modules/webapp.bicep' = {
   name: 'webappdeployment'
   params: {
+    azureaspName: 'aspName1'
     webappName:'iaminazurebicepwebapp'
     location: 'eastus'
   }
