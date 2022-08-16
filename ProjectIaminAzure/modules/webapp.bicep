@@ -1,30 +1,22 @@
-
-
-@description('App-Service-Name')
-param azureaspName string
-
-param webappName string
-
+param webAppName string
 param location string = resourceGroup().location
+param appServicePlanName string
 
-param storageaccountName string
-
-
-
-resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
-  name: azureaspName
-  location: location
-  sku: {
-    tier: 'Free'
-    name: 'F1'
-  }
-}
-
-
-resource azurewebapp 'Microsoft.Web/sites@2022-03-01' = {
-  name: webappName
+resource appServicePlan 'Microsoft.Web/serverfarms@2020-06-01' = {
+  name: appServicePlanName
   location: location
   properties: {
-    storageAccountRequired: storageaccountName
+    reserved: true
+  }
+  sku: {
+    name: 'F1'
+    tier: 'Free'
+  }
+}
+resource appService 'Microsoft.Web/sites@2020-06-01' = {
+  name: webAppName
+  location: location
+  properties: {
+    serverFarmId: appServicePlan.id
   }
 }
