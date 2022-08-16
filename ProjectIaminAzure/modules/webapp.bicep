@@ -1,7 +1,7 @@
 
 
 @description('App-Service-Name')
-param aspName1 string
+param azureaspName string
 
 param webappName string
 
@@ -10,7 +10,7 @@ param location string
 
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
-  name: aspName1
+  name: azureaspName
   location: location
   sku: {
     tier: 'Free'
