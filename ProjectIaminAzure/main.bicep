@@ -1,7 +1,10 @@
+
+
 module webappdeployment 'modules/webapp.bicep' = {
   name: 'webappdeployment'
   params: {
-    webAppName: 'sampleapp'
+    azureaspName: 'samlenote121'
+    webAppName: 'sampleapp783'
     location: 'eastus'
   }
 }
@@ -10,6 +13,6 @@ module webappdeployment 'modules/webapp.bicep' = {
 module storagedeployment 'modules/storage.bicep' = {
   name: 'storagedeployment'
   params:{
-    storageaccountName: 'mystorage'
+    storageaccountName: 'mystorage14321'
   }
 }
