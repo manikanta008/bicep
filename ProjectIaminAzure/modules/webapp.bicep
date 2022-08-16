@@ -5,7 +5,9 @@ param azureaspName string
 
 param webappName string
 
-param location string
+param location string = resourceGroup().location
+
+param storageaccountName string
 
 
 
@@ -23,6 +25,6 @@ resource azurewebapp 'Microsoft.Web/sites@2022-03-01' = {
   name: webappName
   location: location
   properties: {
-    storageAccountRequired: azureasp.id
+    storageAccountRequired: storageaccountName
   }
 }
