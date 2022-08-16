@@ -1,13 +1,16 @@
-param azureaspName string = 'azureasp1'
-param webappName string = 'iaminazurebicepwebapp'
+
+
 param storageaccountName string = 'mystorage'
+
+param webAppName string = 'iaminazurebicepwebapp'
+param location string = resourceGroup().location
+param appServicePlanName string = 'azureasp1'
 
 module webappdeployment 'modules/webapp.bicep' = {
   name: 'webappdeployment'
   params: {
-    storageaccountName: storageaccountName
-    azureaspName: azureaspName
-    webappName: webappName
+    appServicePlanName: appServicePlanName
+    webAppName: webAppName
   }
 }
 
@@ -15,6 +18,7 @@ module webappdeployment 'modules/webapp.bicep' = {
 module storagedeployment 'modules/storage.bicep' = {
   name: 'storagedeployment'
   params:{
-    storageaccoutname: storageaccountName
+    storageaccountName: storageaccountName
+    location:  location
   }
 }
