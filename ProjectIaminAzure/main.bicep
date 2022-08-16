@@ -1,5 +1,5 @@
 module appServicePlan 'modules/webapp.bicep' = {
-  azureaspName: 'azureaspName'
+  name: 'azureaspName'
   params: {
     azureaspName: 'azureasp1'
     location: 'eastus'
